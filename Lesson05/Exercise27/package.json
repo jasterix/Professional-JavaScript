@@ -16,6 +16,8 @@
   "author": "Philip Kirkbride",
   "repository": "https://github.com/TrainingByPackt/Professional-JavaScript",
   "scripts": {
+    "start": "ws --directory build",
+    "build": "babel src -d build && cp -r src/index.html src/images build && webpack --config webpack.config.js",
     "start": "ws"
   },
   "devDependencies": {
