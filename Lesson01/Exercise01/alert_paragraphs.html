@@ -1,26 +1,28 @@
-
 <html>
-    <head>
-      <title>Sample Page</title>
-    </head>
-    <body>
-
+  <head>
+    <title>Sample Page</title>
+  </head>
+  <body>
     <p>This is a paragraph.</p>
-
-    <div
+    <div>
       <p>This is a paragraph inside a div.</p>
-
     </div>
-
     <button>Click me!</button>
-</div>
 
-<button>Click me!</button>
-
-<script>
-
-</script>
-
-</body>
-
+    <script>
+      document
+        .getElementsByTagName("button")[0]
+        .addEventListener("click", () => {
+          const allParagraphs = document.getElementsByTagName("p");
+          let allContent = "";
+          let count = 0;
+          for (let i = 0; i < allParagraphs.length; i++) {
+            count++;
+            const node = allParagraphs[i];
+            allContent += `${count} - ${node.textContent}\n`;
+          }
+          console.log(allContent);
+        });
+    </script>
+  </body>
 </html>
